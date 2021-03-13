@@ -112,8 +112,6 @@ func (a *adapter) MakeBids(internalRequest *openrtb.BidRequest, externalRequest 
 	for _, sb := range bidResp.SeatBid {
 		for i := range sb.Bid {
 
-			sb.Bid[i].ImpID = sb.Bid[i].ID
-
 			bids = append(bids, &adapters.TypedBid{
 				Bid:     &sb.Bid[i],
 				BidType: getBidType(sb.Bid[i].AdM),
